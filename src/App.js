@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CoinChart from "./components/coinChart";
+import Welcome from "./Welcome";
+import Loading from './components/Loading';
+import { HashRouter, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HashRouter>
+      <Route exact path="/" component={Welcome} />
+      <Route exact path="/coinfx" component={CoinChart} />
+      <Route exact path="/loading" component={Loading} />
+    </HashRouter>
+
   );
 }
 
